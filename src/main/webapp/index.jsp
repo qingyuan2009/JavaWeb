@@ -1,5 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
+	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,5 +8,11 @@
 </head>
 <body>
 	Hello JSP
+	<br>
+	<form action="/JavaWeb/index.jsp" method="POST">
+		username: <input type="text" name="username" /> <br> 
+		password: <input type="password" name="password" /> <br> 
+		<input type="submit" value="submit" />
+	</form>
 </body>
 </html>
