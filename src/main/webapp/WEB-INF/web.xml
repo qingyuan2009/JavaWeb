@@ -15,7 +15,7 @@
     <servlet>
     	<servlet-name>ServletAName</servlet-name>
     	<!-- 类路径含pacakge name -->
-    	<servlet-class>AServlet</servlet-class>
+    	<servlet-class>servlet.AServlet</servlet-class>
     	<!-- servletduixiang 启动参数 -->
     	<init-param>
     		<param-name>p1</param-name>

@@ -35,7 +35,7 @@ servlet接口方法：
     <servlet>
     	<servlet-name>ServletAName</servlet-name>
     	<!-- 类路径含pacakge name -->
-    	<servlet-class>AServlet</servlet-class>
+    	<servlet-class>servlet.AServlet</servlet-class>
     	<!-- servletduixiang 启动参数 -->
     	<init-param>
     		<param-name>p1</param-name>
@@ -51,7 +51,7 @@ servlet接口方法：
     <servlet-mapping>
     	<servlet-name>ServletAName</servlet-name>
     	<url-pattern>/servlet_a</url-pattern>    	
-    </servlet-mapping>     
+    </servlet-mapping>      
 
 Servlet域对象:
 *ServletContext
