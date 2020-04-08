@@ -5,7 +5,7 @@ import java.util.Arrays;
 import org.junit.Test;
 
 public class URLEncoding {
-
+	
 	@Test
 	public void Encoding() throws Exception{
 		String s = "´ó¼ÒºÃ";

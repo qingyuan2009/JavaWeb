@@ -14,5 +14,7 @@
 		password: <input type="password" name="password" /> <br> 
 		<input type="submit" value="submit" />
 	</form>
+	Hello Servlet
+	<a href="/JavaWeb/servlet_a" >Access Servlet</a>
 </body>
 </html>

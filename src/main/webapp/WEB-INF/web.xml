@@ -11,4 +11,25 @@
         <welcome-file>index.htm</welcome-file>
         <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
+    <!-- Servlet 配置 -->
+    <servlet>
+    	<servlet-name>ServletAName</servlet-name>
+    	<!-- 类路径含pacakge name -->
+    	<servlet-class>AServlet</servlet-class>
+    	<!-- servletduixiang 启动参数 -->
+    	<init-param>
+    		<param-name>p1</param-name>
+    		<param-value>v1</param-value>
+    	</init-param>    	
+    	<init-param>
+    		<param-name>p2</param-name>
+    		<param-value>v2</param-value>
+    	</init-param>
+    	<!-- Tomcat启动时init servlet -->
+    	<load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet-mapping>
+    	<servlet-name>ServletAName</servlet-name>
+    	<url-pattern>/servlet_a</url-pattern>    	
+    </servlet-mapping>    
 </web-app>
