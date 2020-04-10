@@ -1,35 +1,80 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app xmlns="http://xmlns.jcp.org/xml/ns/javaee"
-  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-  xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee
                       http://xmlns.jcp.org/xml/ns/javaee/web-app_3_1.xsd"
-  version="3.1"
-  metadata-complete="true">    
-    <welcome-file-list>
-        <welcome-file>index.html</welcome-file>
-        <welcome-file>index.xhtml</welcome-file>
-        <welcome-file>index.htm</welcome-file>
-        <welcome-file>index.jsp</welcome-file>
-    </welcome-file-list>
-    <!-- Servlet 配置 -->
-    <servlet>
-    	<servlet-name>ServletAName</servlet-name>
-    	<!-- 类路径含pacakge name -->
-    	<servlet-class>servlet.AServlet</servlet-class>
-    	<!-- servletduixiang 启动参数 -->
-    	<init-param>
-    		<param-name>p1</param-name>
-    		<param-value>v1</param-value>
-    	</init-param>    	
-    	<init-param>
-    		<param-name>p2</param-name>
-    		<param-value>v2</param-value>
-    	</init-param>
-    	<!-- Tomcat启动时init servlet -->
-    	<load-on-startup>1</load-on-startup>
-    </servlet>
-    <servlet-mapping>
-    	<servlet-name>ServletAName</servlet-name>
-    	<url-pattern>/servlet_a</url-pattern>    	
-    </servlet-mapping>    
+	version="3.1" metadata-complete="true">
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.xhtml</welcome-file>
+		<welcome-file>index.htm</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+	<!-- Servlet 1 配置 -->
+	<servlet>
+		<servlet-name>ServletAName</servlet-name>
+		<!-- 类路径含pacakge name -->
+		<servlet-class>servlet.AServlet</servlet-class>
+		<!-- servletduixiang 启动参数 -->
+		<init-param>
+			<param-name>p1</param-name>
+			<param-value>v1</param-value>
+		</init-param>
+		<init-param>
+			<param-name>p2</param-name>
+			<param-value>v2</param-value>
+		</init-param>
+		<!-- Tomcat启动时init servlet -->
+		<load-on-startup>1</load-on-startup>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletAName</servlet-name>
+		<url-pattern>/servlet_a</url-pattern>
+	</servlet-mapping>
+
+	<!-- Servlet 2 配置 -->
+	<servlet>
+		<servlet-name>ServletBName</servlet-name>
+		<servlet-class>servlet.BServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletBName</servlet-name>
+		<url-pattern>/servlet_b</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Servlet 3 配置 -->
+	<servlet>
+		<servlet-name>ServletCName</servlet-name>
+		<servlet-class>servlet.GenericServletTest</servlet-class>
+		<init-param>
+			<param-name>p3</param-name>
+			<param-value>v3</param-value>
+		</init-param>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletCName</servlet-name>
+		<url-pattern>/servlet_c</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Servlet 3 配置 -->
+	<servlet>
+		<servlet-name>ServletDName</servlet-name>
+		<servlet-class>servlet.HttpServletTest</servlet-class>		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletDName</servlet-name>
+		<url-pattern>/servlet_d</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Servlet 4 配置 -->
+	<servlet>
+		<servlet-name>ServletEName</servlet-name>
+		<servlet-class>servlet.LoginServlet</servlet-class>		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletEName</servlet-name>
+		<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+
+
 </web-app>

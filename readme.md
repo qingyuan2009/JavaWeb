@@ -58,5 +58,5 @@ Servlet域对象:
 *ServletRequest
 *HttpSession
 
-
+## Eclipse 使用annotation, 而不是web.xml
 
