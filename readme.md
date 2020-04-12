@@ -53,9 +53,18 @@ servlet接口方法：
     	<url-pattern>/servlet_a</url-pattern>    	
     </servlet-mapping>      
 
-Servlet域对象:
-*ServletContext
+## Servlet域对象:
+*ServletContext --单实例， 服务器启动时创建，服务器关闭时销毁
+	*	内部有Map， 可以存取数据
+	*	访问资源
+	*	把资源读取为输入流 resource-> InputStream
+	*	获取web.xml里的context-parameter
 *ServletRequest
+	*	response响应流分字符流和字节流
+		*	PrintWriter out = response.getWriter(); //字符流
+		*	ServeltOutputStream out = response.getOutputStream(); //字节流
+		*	不能同时使用字符流和字节流
+		*	缓冲区： response.flushBuffer();  //将缓冲区数据立即response，而无需等待缓冲区满了才输出
 *HttpSession
 
 ## Eclipse 使用annotation, 而不是web.xml

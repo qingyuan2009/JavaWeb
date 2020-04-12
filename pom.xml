@@ -17,7 +17,7 @@
 			<version>4.0.1</version>
 			<scope>provided</scope>
 		</dependency>
-		<!-- java.net -->
+		<!-- java.net : e.g. encoding -->
 		<dependency>
 			<groupId>clojure-interop</groupId>
 			<artifactId>java.net</artifactId>
@@ -28,6 +28,12 @@
 			<groupId>junit</groupId>
 			<artifactId>junit</artifactId>
 			<version>4.13-rc-1</version>
+		</dependency>
+		<!-- Apache IO Stream -->
+		<dependency>
+			<groupId>org.apache.directory.studio</groupId>
+			<artifactId>org.apache.commons.io</artifactId>
+			<version>2.4</version>
 		</dependency>
 	</dependencies>
 	<build>

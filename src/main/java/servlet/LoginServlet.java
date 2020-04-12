@@ -1,6 +1,8 @@
 package servlet;
 
 import java.io.IOException;
+
+import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -27,7 +29,10 @@ public class LoginServlet extends HttpServlet {
 	 */
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		response.setHeader("Content-Type", "text/html;charset=UTF-8");
+		// response.setContentType("text/html;charset=UTF-8"); // 也可以
+		// response.setCharacterEncoding("utf-8");  // 也可以, 但客户端就不知道怎么解析了
 		response.getOutputStream().write("大家好".getBytes("UTF-8"));
+		response.flushBuffer();  	//将缓存区数据立即response，而无需等待缓存满了才输出			
 	}
 
 }

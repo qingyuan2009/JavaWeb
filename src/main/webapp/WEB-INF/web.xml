@@ -75,6 +75,36 @@
 		<servlet-name>ServletEName</servlet-name>
 		<url-pattern>/LoginServlet</url-pattern>
 	</servlet-mapping>
+	
+	<!-- Servlet 5 配置 -->
+	<servlet>
+		<servlet-name>ServletFName</servlet-name>
+		<servlet-class>servlet.HttpServletTest2</servlet-class>		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletFName</servlet-name>
+		<url-pattern>/servlet_f</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Servlet 6 配置 -->
+	<servlet>
+		<servlet-name>ServletGName</servlet-name>
+		<servlet-class>servlet.ResponseBuffTest</servlet-class>		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletGName</servlet-name>
+		<url-pattern>/servlet_g</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Servlet 7 配置 -->
+	<servlet>
+		<servlet-name>ServletHName</servlet-name>
+		<servlet-class>servlet.ResponseBuffTest2</servlet-class>		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletHName</servlet-name>
+		<url-pattern>/servlet_h</url-pattern>
+	</servlet-mapping>
 
 
 </web-app>
