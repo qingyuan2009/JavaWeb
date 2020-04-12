@@ -105,6 +105,37 @@
 		<servlet-name>ServletHName</servlet-name>
 		<url-pattern>/servlet_h</url-pattern>
 	</servlet-mapping>
+	
+	<!-- Servlet 8 配置 -->
+	<servlet>
+		<servlet-name>ServletIName</servlet-name>
+		<servlet-class>servlet.RequestTest</servlet-class>		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletIName</servlet-name>
+		<url-pattern>/servlet_i</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Servlet 9 配置 -->
+	<servlet>
+		<servlet-name>ServletJName</servlet-name>
+		<servlet-class>servlet.RequestParamTest</servlet-class>		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletJName</servlet-name>
+		<url-pattern>/servlet_j</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Servlet 10 配置 -->
+	<servlet>
+		<servlet-name>ServletKName</servlet-name>
+		<servlet-class>servlet.RequestBean</servlet-class>		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletKName</servlet-name>
+		<url-pattern>/servlet_k</url-pattern>
+	</servlet-mapping>
+	
 
 
 </web-app>

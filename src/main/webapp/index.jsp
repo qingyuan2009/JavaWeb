@@ -29,5 +29,24 @@
 	<a href="/JavaWeb/LoginServlet">Response编码问题</a><br> 
 	<a href="/JavaWeb/servlet_g">缓冲区机制</a>
 	<a href="/JavaWeb/servlet_h">16K缓冲区机制</a><br> 
+	<a href="/JavaWeb/servlet_i?username=abc&password=123">Request作用域</a><br>
+	<a href="/JavaWeb/servlet_j?username=张三&password=李四">Parameters Get的编码问题</a><br>
+	Parameters Post的编码问题
+	<form action="/JavaWeb/servlet_j" method="POST">
+		username: <input type="text" name="username" value="张三"/> <br> 
+		password: <input type="password" name="password" value="李四"/> <br> 
+		hobbies: <input type="checkbox" name="hobby" value="Internet"/ > 上网
+		<input type="checkbox" name="hobby" value="Swimming"/ > 游泳
+		<input type="checkbox" name="hobby" value="Soccer"/ > 足球
+		<input type="submit" value="submit" />
+	</form>
+	<br>
+	使用Bean来封装Post 
+	<form action="/JavaWeb/servlet_k" method="POST">
+		id: <input type="text" name="number" value="1"/> <br> 
+		name: <input type="text" name="name" value="李四"/> <br> 
+		age: <input type="text" name="age" value="13"/><br> 
+		<input type="submit" value="submit" />
+	</form>	
 </body>
 </html>

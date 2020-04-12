@@ -10,6 +10,7 @@ http://localhost:8080/JavaWeb
 UTF-8: 3 个字节代表一个字符
 GBK: 2个字节代表一个字符
 详见URLEncoding->Encoding
+一个字节 = 8 bit
 
 # http status code
 200:  2 打头 成功
@@ -54,18 +55,56 @@ servlet接口方法：
     </servlet-mapping>      
 
 ## Servlet域对象:
-*ServletContext --单实例， 服务器启动时创建，服务器关闭时销毁
+*	ServletContext --单实例， 服务器启动时创建，服务器关闭时销毁
 	*	内部有Map， 可以存取数据
 	*	访问资源
 	*	把资源读取为输入流 resource-> InputStream
 	*	获取web.xml里的context-parameter
-*ServletRequest
-	*	response响应流分字符流和字节流
-		*	PrintWriter out = response.getWriter(); //字符流
-		*	ServeltOutputStream out = response.getOutputStream(); //字节流
-		*	不能同时使用字符流和字节流
-		*	缓冲区： response.flushBuffer();  //将缓冲区数据立即response，而无需等待缓冲区满了才输出
-*HttpSession
+*	ServletRequest
+	*	域对象：变量跨多个Servlet， 一个request由Servlet A 处理， 但Servlet A 需要Servlet B 帮助
+	*	request.setAttribute("abc", "xxxx");
+*	HttpSession
+
+## Response: response响应流分字符流和字节流
+*	PrintWriter out = response.getWriter(); //字符流
+*	ServeltOutputStream out = response.getOutputStream(); //字节流
+*	不能同时使用字符流和字节流
+*	缓冲区： response.flushBuffer();  //将缓冲区数据立即response，而无需等待缓冲区满了才输出
+
 
 ## Eclipse 使用annotation, 而不是web.xml
 
+## response
+*	response.setContentType("text/html;charset=utf-8");
+*	response.setHeader("Content-Type", ""text/html;charset=utf-8"");
+*	response.setCharacterEncoding("utf-8");
+*	response.setStatus(200);
+*	response.sendError(404, "您要查找的资源不存在");
+*	response.setHeader("Refresh", "5; URL=/JavaWeb/LoginServlet");  //自动跳转
+*	response.setHeader("Location", "/JavaWeb/index.jsp");
+*	response.sendRedirect("/JavaWeb/index.jsp"); //设置状态码302 + relocation
+
+## request
+*	request.getContextPath();
+* 	request.getQueryString();  //获取parameter
+
+	http://localhost:8080/hello/oneServlet?name=zhangSan
+	getRequestURL()-> http://localhost:8080/hello/oneServlet?name=zhangSan
+	getScheme()-> http
+	getServerName()-> localhost
+	getServerPort()-> 8080
+	getContextPath()-> /hello
+	getServletPath()-> /oneServlet
+	getServletURI()-> /hello/oneServlet
+	getQueryString()-> name=zhangSan
+
+Post 请求编码问题：
+request.setCharacterEncoding("utf-8");
+String username = request.getParameter("username");
+String password = request.getParameter("password");
+
+Get 请求编码问题：
+String username = request.getParameter("username");
+String password = request.getParameter("password");
+byte[] b1 = username.getBytes("iso-8859-1"); //回退
+username = new String(b1, "utf-8"); //重解
