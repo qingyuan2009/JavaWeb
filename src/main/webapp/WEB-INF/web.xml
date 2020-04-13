@@ -166,6 +166,24 @@
 		<url-pattern>/crossservlet_c</url-pattern>
 	</servlet-mapping>
 	
-
+	<!-- Servlet 14 配置 -->
+	<servlet>
+		<servlet-name>ServletOName</servlet-name>
+		<servlet-class>servlet.CookieTestA</servlet-class>		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletOName</servlet-name>
+		<url-pattern>/cookietest_a</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Servlet 15 配置 -->
+	<servlet>
+		<servlet-name>ServletPName</servlet-name>
+		<servlet-class>servlet.CookieTestB</servlet-class>		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletPName</servlet-name>
+		<url-pattern>/cookietest_b</url-pattern>
+	</servlet-mapping>
 
 </web-app>

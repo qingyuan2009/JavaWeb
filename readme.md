@@ -125,3 +125,10 @@ rd.include(request, response);  //请求包含
 	/资源 --> http://localhost:8080/项目名/资源
 	使用： 请求转发，请求包含，<url-pattern>, ServletContext于资源相关
 Class路径： AClass.getResourceAsStream("/a.txt") //当前目录
+
+## Session
+一次会话的多次请求可以共享数据
+
+## cookie
+服务器把数据寄存在客户端： 都放在请求头或响应头
+默认生命周期是浏览器，也可以保存在硬盘
