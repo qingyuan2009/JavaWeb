@@ -115,3 +115,13 @@ username = new String(b1, "utf-8"); //重解
 RequestDispatcher rd = request.getRequestDispatcher("/BServlet"); // Servlet URL pattern
 rd.forward(request, response);  //请求转发
 rd.include(request, response);  //请求包含
+
+## 路径
+客户端路径：
+	/项目名/资源 --> http://localhost:8080/项目名/资源
+	使用： 超链接，表单，重定向，<img src="/项目名/资源">
+	如果不用/：则是指当前目录： <a href="b.html" />  不建议使用
+服务器端路径 
+	/资源 --> http://localhost:8080/项目名/资源
+	使用： 请求转发，请求包含，<url-pattern>, ServletContext于资源相关
+Class路径： AClass.getResourceAsStream("/a.txt") //当前目录
