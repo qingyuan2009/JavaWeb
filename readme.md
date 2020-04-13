@@ -108,3 +108,10 @@ String username = request.getParameter("username");
 String password = request.getParameter("password");
 byte[] b1 = username.getBytes("iso-8859-1"); //回退
 username = new String(b1, "utf-8"); //重解
+
+## 请求转发 和 请求包含
+请求转发：Servlet A 将请求转发给 Servlet B, A就不管了
+请求包含：Servlet A 包含 Servlet B, A和B共同处理
+RequestDispatcher rd = request.getRequestDispatcher("/BServlet"); // Servlet URL pattern
+rd.forward(request, response);  //请求转发
+rd.include(request, response);  //请求包含

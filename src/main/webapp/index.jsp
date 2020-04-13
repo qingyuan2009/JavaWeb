@@ -48,5 +48,8 @@
 		age: <input type="text" name="age" value="13"/><br> 
 		<input type="submit" value="submit" />
 	</form>	
+	<br>	
+	<a href="/JavaWeb/crossservlet_a">跨Servlet--请求转发</a><br> 
+	<a href="/JavaWeb/crossservlet_c">跨Servlet--请求包含</a><br>
 </body>
 </html>

@@ -136,6 +136,36 @@
 		<url-pattern>/servlet_k</url-pattern>
 	</servlet-mapping>
 	
+	<!-- Servlet 11 配置 -->
+	<servlet>
+		<servlet-name>ServletLName</servlet-name>
+		<servlet-class>servlet.CrossServletA</servlet-class>		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletLName</servlet-name>
+		<url-pattern>/crossservlet_a</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Servlet 12 配置 -->
+	<servlet>
+		<servlet-name>ServletMName</servlet-name>
+		<servlet-class>servlet.CrossServletB</servlet-class>		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletMName</servlet-name>
+		<url-pattern>/crossservlet_b</url-pattern>
+	</servlet-mapping>
+	
+	<!-- Servlet 13 配置 -->
+	<servlet>
+		<servlet-name>ServletNName</servlet-name>
+		<servlet-class>servlet.CrossServletC</servlet-class>		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletNName</servlet-name>
+		<url-pattern>/crossservlet_c</url-pattern>
+	</servlet-mapping>
+	
 
 
 </web-app>
