@@ -21,6 +21,7 @@ public class CookieTestA extends HttpServlet {
 		UUID uuid = UUID.randomUUID();
 		String id = uuid.toString().replace("-", "").toUpperCase();
 		Cookie cookie = new Cookie("id", id); //键值对
+		cookie.setMaxAge(60 * 60); //硬盘保存1小时
 		resp.addCookie(cookie);
 		resp.setContentType("text/html;charset=UTF-8"); 
 		resp.getWriter().println("服务器设置了cookie");

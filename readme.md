@@ -132,3 +132,8 @@ Class路径： AClass.getResourceAsStream("/a.txt") //当前目录
 ## cookie
 服务器把数据寄存在客户端： 都放在请求头或响应头
 默认生命周期是浏览器，也可以保存在硬盘
+cookie.setMaxAge(-1): 只在浏览器中， 当浏览器关闭，cookie失效
+cookie.setMaxAge(60*60): cookie在硬盘保存一小时
+cookie.setMaxAge(0): 删除cookie
+
+
