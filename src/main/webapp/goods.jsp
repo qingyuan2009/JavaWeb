@@ -12,5 +12,17 @@
 	<a href="/JavaWeb/goods_servlet?name=Apple">Apple</a><br>	
 	<a href="/JavaWeb/goods_servlet?name=Lenovo">Lenovo</a><br>
 	<a href="/JavaWeb/goods_servlet?name=Clear">清除cookie</a><br>
+	
+	<%
+		Cookie[] cs = request.getCookies();
+		if (cs != null){
+			for (Cookie c : cs){
+				if (c.getName().equals("goods")){
+					out.print(c.getValue());
+				}
+			}
+		}
+		
+	%>
 </body>
 </html>

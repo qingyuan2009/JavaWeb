@@ -20,7 +20,7 @@ public class GoodsServlet extends HttpServlet {
 		Cookie[] cookies = req.getCookies();
 		if (cookies != null) {
 			for (Cookie cookie : cookies) {
-				if (cookie.getName().equals("name")) {
+				if (cookie.getName().equals("goods")) {
 					if (good.equals("Clear")) {
 						cookie.setMaxAge(0); // É¾³ýcookie
 					} else {
@@ -35,7 +35,7 @@ public class GoodsServlet extends HttpServlet {
 			goodUtil.addGood(good);
 		}
 
-		Cookie cookie = new Cookie("name", goodUtil.getAllGood());
+		Cookie cookie = new Cookie("goods", goodUtil.getAllGood());
 		System.out.println("cookie:" + goodUtil.getAllGood());
 
 		resp.addCookie(cookie);
