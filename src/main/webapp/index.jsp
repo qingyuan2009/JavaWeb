@@ -53,5 +53,6 @@
 	<a href="/JavaWeb/crossservlet_c">跨Servlet--请求包含</a><br>
 	<a href="/JavaWeb/cookietest_a">服务器设置cookie</a><br>
 	<a href="/JavaWeb/cookietest_b">客户端返还cookie</a><br>
+	<a href="/JavaWeb/goods.jsp">cookie 浏览商品</a><br>
 </body>
 </html>

@@ -185,5 +185,15 @@
 		<servlet-name>ServletPName</servlet-name>
 		<url-pattern>/cookietest_b</url-pattern>
 	</servlet-mapping>
+	
+	<!-- Servlet 16 配置 -->
+	<servlet>
+		<servlet-name>ServletQName</servlet-name>
+		<servlet-class>servlet.GoodsServlet</servlet-class>		
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>ServletQName</servlet-name>
+		<url-pattern>/goods_servlet</url-pattern>
+	</servlet-mapping>
 
 </web-app>
