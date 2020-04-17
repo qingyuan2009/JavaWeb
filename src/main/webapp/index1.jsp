@@ -20,6 +20,11 @@
 
 	<%
 		out.print("<p style='color:red'>" + username + "</p>");
+	
+		//URL 重写
+		//如果cookie禁用， 会把sessionid 添加到url中, 
+		String str = response.encodeURL("/JavaWeb/index2.jsp");
+		out.print(str);
 	%>
 
 	<h3>欢迎</h3>

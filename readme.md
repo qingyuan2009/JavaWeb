@@ -139,6 +139,15 @@ cookie.setMaxAge(0): 删除cookie
 
 ## session
 服务器端对象， 不是客户端对象
+session原理就是cookie, cookie里只存放了一个session ID, session数据在服务器端：
+cookie: jsessionid = uuid
+当客户端请求时，会发送session ID, 服务器进行匹配寻找。 cookie的生命周期是浏览器关闭。
+服务器如果发现长时间存活的session，会进行销毁， 这样客户端即使有session ID也找不到session数据。
+这个就是session超时
 
+## URL 重写：
+如果cookie被禁，可以使用URL重写， 在URL追加;jsessionid=session.getId();
+使每个URL-> http://localhost:8080/project/url;jsessionid=uuid
+这个jsessionid由服务器添加， 例如 response.encodeURL("/project/index.jsp")
 
 
