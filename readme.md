@@ -64,6 +64,7 @@ servlet接口方法：
 	*	域对象：变量跨多个Servlet， 一个request由Servlet A 处理， 但Servlet A 需要Servlet B 帮助
 	*	request.setAttribute("abc", "xxxx");
 *	HttpSession
+	* 	当浏览器关闭就销毁
 
 ## Response: response响应流分字符流和字节流
 *	PrintWriter out = response.getWriter(); //字符流
@@ -136,6 +137,8 @@ cookie.setMaxAge(-1): 只在浏览器中， 当浏览器关闭，cookie失效
 cookie.setMaxAge(60*60): cookie在硬盘保存一小时
 cookie.setMaxAge(0): 删除cookie
 
+## session
+服务器端对象， 不是客户端对象
 
 
 

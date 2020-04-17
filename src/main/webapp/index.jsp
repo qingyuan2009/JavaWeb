@@ -54,5 +54,11 @@
 	<a href="/JavaWeb/cookietest_a">服务器设置cookie</a><br>
 	<a href="/JavaWeb/cookietest_b">客户端返还cookie</a><br>
 	<a href="/JavaWeb/goods.jsp">cookie 浏览商品</a><br>
+	<a href="/JavaWeb/session_servletA">Session中设置变量</a><br>
+	<a href="/JavaWeb/session_servletB">Session中获取变量</a><br>
+	<a href="/JavaWeb/login.jsp">Session login 例子</a><br>
+	<a href="/JavaWeb/index2.jsp">Session login 第二页</a><br>
+	
+	
 </body>
 </html>
