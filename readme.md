@@ -150,4 +150,7 @@ cookie: jsessionid = uuid
 使每个URL-> http://localhost:8080/project/url;jsessionid=uuid
 这个jsessionid由服务器添加， 例如 response.encodeURL("/project/index.jsp")
 
+## 反射
+硬盘上的Class A {} --> 编译后成为 A.class  --> 在内存中 JVM 是 Class: Class(Field, Method, Constructor)
+
 
