@@ -1,6 +1,7 @@
 package util;
 
 import java.io.InputStream;
+import java.lang.reflect.Constructor;
 import java.util.Properties;
 
 import javax.swing.JFrame;
@@ -65,5 +66,43 @@ public class ReflectionDemo {
 		// Java 8 , print key and values
 		prop.forEach((key, value) -> System.out.println("Key : " + key + ", Value : " + value));
 	}
+	
+	@Test
+	public void func5() throws Exception {
+	   Class<Student> c1 = Student.class;
+	   //获取public 构造器
+	   Constructor[] constructors = c1.getConstructors();
+	   //获取所有构造器
+	   Constructor[] constructors2 = c1.getDeclaredConstructors();
+	   
+	   //获取没有参数的public构造器
+	   Constructor con1 = c1.getConstructor();
+	   //获取带参数的public构造器
+	   Constructor con2 = c1.getConstructor(int.class, String.class, int.class);
+	}
+	
+	@Test
+    public void func6() throws Exception {
+       Class<String> c1 = String.class;
+       
+       //获取所有构造器
+       Constructor[] constructors2 = c1.getDeclaredConstructors();
+       
+       for (Constructor con: constructors2) {
+           System.out.print(con.getDeclaringClass().getSimpleName() + "(");
+           Class[] paramType = con.getParameterTypes();
+           for (int i = 0; i <paramType.length; i++) {
+               if (i == paramType.length-1) {
+                   System.out.print(paramType[i].getSimpleName());
+               }else {
+                   System.out.print(paramType[i].getSimpleName() + ","); 
+               }
+           }           
+           
+           System.out.println( ")");
+       }
+       
+      
+    }
 
 }
