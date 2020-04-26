@@ -153,4 +153,32 @@ cookie: jsessionid = uuid
 ## 反射
 硬盘上的Class A {} --> 编译后成为 A.class  --> 在内存中 JVM 是 Class: Class(Field, Method, Constructor)
 
+## JavaBean
+JavaBean属性： 有getter/setter方法的成员变量
+必须要有无参构造器
+属性名必须大于2个字符，要么全大写，要么全小写：id or ID --> setId(), setID()
+
+已知： class 一个， 属性一个
+      Student.class,  age
+通过反射创建一个Student对象，并为age赋值13
+
+步骤：
+1. Object o = c.newInstance();
+2. age的首字母改为大写与get/set相连-> getAge,setAge
+Method read = c.getMethod("getAge"); //通过get方法获取参数类型
+Class returnType = read.getReturnType(); 
+Method write = c.getMethod("setAge", returnType); //获取了set方法
+c.invoke(write, 13);
+
+以上步骤可以用内省实现：Introspector
+1. 通过class获取BeanInfo
+2. 通过BeanInfo获取该类的所有属性描述符数组： PropertyDescriptor
+3. 通过PropertyDescriptor来获取get和set方法
+
+最佳方式：BeanUtils
+
+
+      
+
+
 

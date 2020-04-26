@@ -58,7 +58,12 @@
 	<a href="/JavaWeb/session_servletB">Session中获取变量</a><br>
 	<a href="/JavaWeb/login.jsp">Session login 例子</a><br>
 	<a href="/JavaWeb/index2.jsp">Session login 第二页</a><br>
-	
-	
+	使用Bean来封装Post高级用法使用CommonUtils
+	<form action="/JavaWeb/bean_person" method="POST">
+		name: <input type="text" name="name" value="1"/> <br> 
+		age: <input type="text" name="age" value="13"/> <br> 
+		sex: <input type="text" name="sex" value="男"/><br> 
+		<input type="submit" value="submit" />
+	</form>		
 </body>
 </html>
