@@ -5,7 +5,8 @@ public class Person {
     private int age;
     private String sex;  
     
-    public Person() {       
+    public Person() { 
+        System.out.println("¥¥Ω®¡À");        
     }    
     public Person(String name, int age, String sex) {
         super();

@@ -1,4 +1,4 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" import="util.Person" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -64,6 +64,19 @@
 		age: <input type="text" name="age" value="13"/> <br> 
 		sex: <input type="text" name="sex" value="男"/><br> 
 		<input type="submit" value="submit" />
-	</form>		
+	</form><br>	
+	jsp:useBean创建Person Object, 并放入session<br>
+	<jsp:useBean id="person1" class="util.Person" scope="session" />	
+	<jsp:setProperty property="name" name="person1" value="zhourui" />
+	<jsp:setProperty property="age" name="person1" value="13" />
+	<jsp:setProperty property="sex" name="person1" value="male" />
+	<jsp:getProperty property="name" name="person1"  />
+	<jsp:getProperty property="age" name="person1"  />
+	<jsp:getProperty property="sex" name="person1"  />
+	<%
+		Person person = (Person)session.getAttribute("person1");		
+		out.println(person);
+	%>
+	
 </body>
 </html>

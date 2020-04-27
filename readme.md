@@ -177,6 +177,29 @@ c.invoke(write, 13);
 
 最佳方式：BeanUtils
 
+# jsp:useBean
+scope= page, session, application, reques, 默认是page
+
+<jsp:useBean id="person1" class="util.Person" scope="session" />	
+<jsp:setProperty property="name" name="person1" value="zhourui" />
+<jsp:setProperty property="age" name="person1" value="13" />
+<jsp:setProperty property="sex" name="person1" value="male" />
+
+<jsp:getProperty property="name" name="person1"  />
+<jsp:getProperty property="age" name="person1"  />
+<jsp:getProperty property="sex" name="person1"  />
+
+<%
+	Person person = (Person)session.getAttribute("person1");		
+	out.println(person);
+%>
+
+# MVC
+M: Model-> javaBean 
+V: View-> jsp
+C: Controller -> Servlet 
+
+
 
       
 
