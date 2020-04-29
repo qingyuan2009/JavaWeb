@@ -4,6 +4,7 @@ import java.util.Map;
 
 import org.apache.commons.beanutils.BeanUtils;
 
+//将map转成class object
 public class CommonUtils {
     
     // <T> 可以使调用者不需要cast

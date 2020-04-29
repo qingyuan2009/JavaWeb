@@ -199,6 +199,24 @@ M: Model-> javaBean
 V: View-> jsp
 C: Controller -> Servlet 
 
+另一种分法：
+Web层： servlet, jsp
+业务层： service
+数据层： DAO
+数据库
+
+Service:
+1. 注册
+2. 登陆
+3. 查询
+4. 添加
+5. 删除
+6. 修改
+
+DAO： CURD 
+
+DB: XML
+
 
 
       
