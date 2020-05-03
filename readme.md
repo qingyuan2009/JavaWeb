@@ -1,3 +1,6 @@
+# maven debug
+tomcat7:run
+
 # ÔËÐÐ war
 run mvn: clean install 
 http://localhost:8080/JavaWeb
