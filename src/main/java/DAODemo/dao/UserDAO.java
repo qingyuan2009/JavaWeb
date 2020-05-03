@@ -14,12 +14,12 @@ import org.dom4j.io.OutputFormat;
 import org.dom4j.io.SAXReader;
 import org.dom4j.io.XMLWriter;
 import org.junit.Test;
-import org.w3c.dom.NodeList;
 
 import DAODemo.model.User;
 
 public class UserDAO {
 
+    // Class 转换为XML element
     public void toElement(User user, Element userNode) {
         userNode.addAttribute("username", user.getUsername());
         userNode.addAttribute("password", user.getPassword());
@@ -28,6 +28,7 @@ public class UserDAO {
         userNode.addAttribute("email", user.getEmail());
     }
 
+    // XML element 转换为 class
     public User toBean(Element element) {
         User user = new User();
         user.setUsername(element.attributeValue("username"));
@@ -38,6 +39,7 @@ public class UserDAO {
         return user;
     }
 
+    // 读取XML document
     private Document getDocument() {
         SAXReader reader = new SAXReader();
         Document doc;
@@ -50,6 +52,7 @@ public class UserDAO {
         return doc;
     }
 
+    // save XML document
     private void saveDocument(Document doc) {
         OutputFormat format = new OutputFormat("\t", true);
         format.setTrimText(true); // 删除空白
@@ -69,18 +72,22 @@ public class UserDAO {
         }
     }
 
+    // Add User object to XML file
     public void addUser(User user) throws Exception {
         Document doc = getDocument();
-        Element root = doc.getRootElement();
-        Element userNode = root.addElement("user");
-        toElement(user, userNode);
-        saveDocument(doc);
+        Element userEle = (Element) doc.selectSingleNode("//user[@username='" + user.getUsername() + "']");
+        if (userEle == null) {
+            Element root = doc.getRootElement();
+            Element userNode = root.addElement("user");
+            toElement(user, userNode);
+            saveDocument(doc);
+        }
     }
 
     // @Test
     public void TestAdd() throws Exception {
         User user = new User();
-        user.setUsername("EFG");
+        user.setUsername("ABC");
         user.setPassword("125");
         user.setSex("male");
         user.setBirthday("1977");
@@ -88,16 +95,23 @@ public class UserDAO {
         addUser(user);
     }
 
+    // update
     public void updateUser(User user) {
         Document doc = getDocument();
-        Element root = doc.getRootElement();
-        List<Element> userList = root.elements("user");
-        for (Element element : userList) {
-            if (element.attributeValue("username").equals(user.getUsername())) {
-                toElement(user, element);
-                saveDocument(doc);
-            }
-        }
+        /*
+         * Element root = doc.getRootElement();
+         * List<Element> userList = root.elements("user");
+         * for (Element element : userList) {
+         * if (element.attributeValue("username").equals(user.getUsername())) {
+         * toElement(user, element);
+         * saveDocument(doc);
+         * }
+         * }
+         */
+        Element userEle = (Element) doc.selectSingleNode("//user[@username='" + user.getUsername() + "']");
+        toElement(user, userEle);
+        saveDocument(doc);
+
     }
 
     // @Test
@@ -111,23 +125,25 @@ public class UserDAO {
         updateUser(user);
     }
 
+    // delete
     public void deleteUser(String username) {
         Document doc = getDocument();
         Element root = doc.getRootElement();
         List<Element> userList = root.elements("user");
         for (Element element : userList) {
             if (element.attributeValue("username").equals(username)) {
-                element.getParent().remove(element);               
+                element.getParent().remove(element);
                 saveDocument(doc);
             }
-        }        
+        }
     }
 
-    //@Test
+    // @Test
     public void TestDelete() throws Exception {
         deleteUser("ABC");
     }
 
+    // search all
     public List<User> findAll() {
         List<User> users = new ArrayList<>();
         Document doc = getDocument();
@@ -139,7 +155,7 @@ public class UserDAO {
         return users;
     }
 
-    //@Test
+    // @Test
     public void TestfindAll() throws Exception {
         List<User> users = findAll();
         for (User user : users) {
@@ -159,7 +175,7 @@ public class UserDAO {
         return null;
     }
 
-    //@Test
+    // @Test
     public void TestfindByUsername() throws Exception {
         User user = findByUsername("ABC");
         System.out.println("Find by username: " + user.toString());
@@ -177,7 +193,7 @@ public class UserDAO {
         return null;
     }
 
-    //@Test
+    // @Test
     public void TestfindByEmail() throws Exception {
         User user = findByEmail("efg.com");
         System.out.println("Find by email: " + user.toString());

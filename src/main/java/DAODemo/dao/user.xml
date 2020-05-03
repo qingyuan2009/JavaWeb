@@ -2,4 +2,8 @@
 
 <users>
 	<user username="EFG" password="125" sex="male" birthday="1977" email="efg.com"/>
+	<user username="ABC" password="333" sex="male" birthday="1977" email="rui.com"/>
+	<user username="KKK" password="12345" sex="female" email="abc@kkk.com"/>
+	<user username="PPP" password="12345" sex="female" email="abc@kkk.com"/>
+	<user username="OPPO" password="9887" sex="female" email="abc@kkk.com"/>
 </users>

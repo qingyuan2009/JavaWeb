@@ -77,6 +77,18 @@
 		Person person = (Person)session.getAttribute("person1");		
 		out.println(person);
 	%>
+	<br>
+	MVC Add User:
+	<form action="/JavaWeb/bean_user" method="POST">
+		username: <input type="text" name="username" value="KKK"/> <br> 
+		password: <input type="text" name="password" value="12345"/> <br> 
+		sex: <input type="text" name="sex" value="female"/><br> 
+		address: <input type="text" name="address" value="Shanghai"/><br> 
+		email: <input type="text" name="email" value="abc@kkk.com"/><br> 
+		<input type="submit" name="add" value="Register User" />
+		<input type="submit" name="update" value="Update User" />
+		<input type="submit" name="login" value="login User" />
+	</form>	
 	
 </body>
 </html>
