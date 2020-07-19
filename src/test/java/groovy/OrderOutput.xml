@@ -1,0 +1,11 @@
+<PurchaseOrder>
+  <Header>
+    <ID>OrderXYZ</ID>
+    <DocumentDate>20190218</DocumentDate>
+    <DocumentType>Z001</DocumentType>
+  </Header>
+  <Item>
+    <ProductCode>MatABC</ProductCode>
+    <Quantity>57</Quantity>
+  </Item>
+</PurchaseOrder>

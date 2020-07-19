@@ -1,0 +1,18 @@
+<Order>
+    <Header>
+        <OrderNumber>OrderXYZ</OrderNumber>
+        <Date>18-02-2019</Date>
+    </Header>
+    <Item>
+        <ItemNumber>10</ItemNumber>
+        <MaterialNumber>MatABC</MaterialNumber>
+        <Quantity>57</Quantity>
+        <IsBatchParent>true</IsBatchParent>
+    </Item>
+    <Item>
+        <ItemNumber>20</ItemNumber>
+        <MaterialNumber>MatABC</MaterialNumber>
+        <Quantity>57</Quantity>
+        <IsBatchParent>false</IsBatchParent>
+    </Item>
+</Order>
