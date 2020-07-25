@@ -21,15 +21,16 @@ Message processData(Message message) {
     def builder = new MarkupBuilder(writer)
 
     // Define target payload mapping
-    builder.'ns1:ZNFHIR_CO_HIERARCHYORDER_POST'( 'xmlns:ns1':"urn:sap-com:document:sap:rfc:functions" ) {  
+    //builder.'ns1:ZNFHIR_CO_HIERARCHYORDER_POST'( 'xmlns:ns1':"urn:sap-com:document:sap:rfc:functions" ) {  
+    builder.root {
         
-        def validItems = OrderList.resource.parameter.findAll{ item -> item.name.text() == 'TopOrder' }
+        def validItems = OrderList.entry.resource.parameter.findAll{ item -> item.name.text() == 'TopOrder' }
         validItems.each{ item ->
             'IvTopOrder' (item.valueString)
         }
         
         'ItOrderList' {
-            def validItems2 = OrderList.resource.parameter.findAll{ item -> item.name.text() == 'SubOrder' }
+            def validItems2 = OrderList.entry.resource.parameter.findAll{ item -> item.name.text() == 'SubOrder' }
             validItems2.each{ item ->
                 'Item' {
                     'Aufnr'(item.valueString)                

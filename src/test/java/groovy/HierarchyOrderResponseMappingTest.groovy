@@ -9,7 +9,7 @@ import org.apache.camel.impl.DefaultExchange
 import spock.lang.Shared
 import spock.lang.Specification
 
-class OrderToPurchaseOrderSpec extends Specification {
+class HierarchyOrderResponseMappingTest extends Specification {
 
     Message msg
     Exchange exchange
@@ -18,22 +18,21 @@ class OrderToPurchaseOrderSpec extends Specification {
     def setup() {
         // Load Groovy Script
         GroovyShell shell = new GroovyShell()       
-        script = shell.parse(new File('C:/Users/i035299/Desktop/myJava/eclipse-workspace-java/JavaWeb/src/main/java/groovy/ParseXML.groovy'))
+        script = shell.parse(new File('C:/Users/i035299/Desktop/myJava/eclipse-workspace-java/JavaWeb/src/main/java/groovy/HierarchyOrderResponseMapping.groovy'))
 
         CamelContext context = new DefaultCamelContext()
         exchange = new DefaultExchange(context)
         msg = new MessageImpl(exchange)
     }
 
-    def 'Purchase Order Mapping for Document Type Z001'() {
+    def 'Generate Output'() {
         given:
         //--------------------------------------------------------------
         // Initialize message with body, header and property
-        def body = new File('C:/Users/i035299/Desktop/myJava/eclipse-workspace-java/JavaWeb/src/test/java/groovy/Order.xml')
+        def body = new File('C:/Users/i035299/Desktop/myJava/eclipse-workspace-java/JavaWeb/src/test/java/groovy/HierarchyOrderResponseMappingInput.xml')
         println(body.text);
         println('----------------------------------------------');
-        msg.setProperty('DocType', 'Z001')
-        //--------------------------------------------------------------
+        
 
         exchange.getIn().setBody(body)
         msg.setBody(exchange.getIn().getBody())
@@ -44,7 +43,7 @@ class OrderToPurchaseOrderSpec extends Specification {
 
         then:
         println(msg.getBody());
-        msg.getBody() == new File('C:/Users/i035299/Desktop/myJava/eclipse-workspace-java/JavaWeb/src/test/java/groovy/OrderOutput.xml').text
+        //msg.getBody() == new File('C:/Users/i035299/Desktop/myJava/eclipse-workspace-java/JavaWeb/src/test/java/groovy/OrderOutput.xml').text
         
         
     }

@@ -1,0 +1,20 @@
+<root>
+  <ET_RETURN>
+    <item>
+      <TYPE>S</TYPE>
+      <ID>ZHIER</ID>
+      <NUMBER>001</NUMBER>
+      <MESSAGE>Hierarchy Order reversed</MESSAGE>
+      <LOG_NO/>
+      <LOG_MSG_NO>000000</LOG_MSG_NO>
+      <MESSAGE_V1/>
+      <MESSAGE_V2/>
+      <MESSAGE_V3/>
+      <MESSAGE_V4/>
+      <PARAMETER/>
+      <ROW>0</ROW>
+      <FIELD/>
+      <SYSTEM/>
+    </item>
+  </ET_RETURN>
+</root>
