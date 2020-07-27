@@ -24,8 +24,7 @@ Message processData(Message message) {
     builder.'n0:BAPI_EBDR_CREATEMULTIPLE'( 'xmlns:ns1':"urn:sap-com:document:sap:rfc:functions" )   
     {
         
-        'IT_DATA'{   
-            
+        'IT_DATA'{               
             def validItems = entryList.entry.resource.findAll{ item -> item.resourceType.text() == 'ChargeItemDistribution' }
             validItems.each{ item ->
                 'ITEM' {
