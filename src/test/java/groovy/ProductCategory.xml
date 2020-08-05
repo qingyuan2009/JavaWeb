@@ -1,0 +1,14 @@
+<products>
+  <product id="1">
+    <categories>
+      <category id="1" />
+      <category id="2" />
+    </categories>
+  </product>
+  <product id="2">
+    <categories>
+      <category id="3" />
+      <category id="4" />
+    </categories>
+  </product>
+</products>

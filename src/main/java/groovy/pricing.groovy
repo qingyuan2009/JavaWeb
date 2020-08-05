@@ -32,7 +32,7 @@ Message processData(Message message) {
                     'PRECEDINGDOCUMENTITEM' (item.id) 
                     def validItems2 = entryList.entry.resource.parameter.findAll{ item2 -> item2.name.text() == 'salesOrg' }
                     validItems2.each{ item2 ->
-                      'SALESORGANIZATION' (item2.valueString)  
+                      'SALESORGANIZATION' (item2.valueString) 
                     }                 
                 }          
             }

@@ -6,10 +6,6 @@
     <resource>
       <resourceType>Parameters</resourceType>
       <parameter>
-        <name>refDocumentNo</name>
-        <valueString>pa-inv0001</valueString>
-      </parameter>
-      <parameter>
         <name>salesOrg</name>
         <valueString>0001</valueString>
       </parameter>
@@ -18,31 +14,27 @@
         <valueString>01</valueString>
       </parameter>
       <parameter>
-        <name>divition</name>
+        <name>division</name>
         <valueString>01</valueString>
-      </parameter>
-      <parameter>
-        <name>refDocumentType</name>
-        <valueString>EO01</valueString>
-      </parameter>
-      <parameter>
-        <name>refDocumentItemCategory</name>
-        <valueString>ED01</valueString>
-      </parameter>
-      <parameter>
-        <name>requestType</name>
-        <valueString>BDR1</valueString>
       </parameter>
       <parameter>
         <name>soldToParty</name>
         <valueString>insurance_01</valueString>
+      </parameter>
+      <parameter>
+        <name>payer</name>
+        <valueString>insurance_01</valueString>
+      </parameter>
+      <parameter>
+        <name>pricingDate</name>
+        <valueString>20200731</valueString>
       </parameter>
     </resource>
   </entry>
   <entry>
     <resource>
       <resourceType>ChargeItemDistribution</resourceType>
-      <id>1</id>
+      <id>000001</id>
       <meta>
         <versionId>00e33b68-5207-4bee-96e8-f842f48ff46c</versionId>
         <lastUpdated>2020-07-03T07:23:41Z</lastUpdated>
@@ -53,7 +45,7 @@
         <system>https://fhir-core-svc-prod.cfapps.eu10.hana.ondemand.com/pacc-acceptance-fs</system>
         <value>301ce28e-4c3e-4c37-980a-7d5d854db37a</value>
       </identifier>
-      <status>confirmed</status>
+      <status>distributed</status>
       <subject>
         <reference>Patient/d4cf5699-6ab6-4fbf-8d4d-cea23358e58c</reference>
       </subject>
@@ -70,25 +62,25 @@
         <priority>1</priority>
       </coverage>
       <toBeDistributedQuantity>
-        <value>1</value>
-        <unit>PCE</unit>
+        <value>0.6</value>
+        <unit>EACH</unit>
       </toBeDistributedQuantity>
       <toBeDistributedNetAmount>
-        <value>116.88</value>
+        <value>116</value>
         <currency>EUR</currency>
       </toBeDistributedNetAmount>
       <toBeDistributedGrossAmount>
-        <value>116.88</value>
+        <value>116</value>
         <currency>EUR</currency>
       </toBeDistributedGrossAmount>
       <toBeDistributedPriceComponent>
         <type>base</type>
         <code>
           <coding>
-            <system>http://fhir.de/CodeSystem/kbv/ebm</system>
+            <system>http://fhir.de/CodeSystem/condition_type</system>
             <version>2019Q2</version>
-            <code>13422</code>
-            <display>Zusatzpauschale (Teil-)Koloskopie</display>
+            <code>RP00</code>
+            <display>Basic price</display>
           </coding>
         </code>
         <amount>
@@ -96,30 +88,33 @@
           <currency>EUR</currency>
         </amount>
       </toBeDistributedPriceComponent>
-      <requestedQuantity>
-        <value>1</value>
-        <unit>PCE</unit>
-      </requestedQuantity>
-      <requestedAmount>
-        <value>116.88</value>
-        <currency>EUR</currency>
-      </requestedAmount>
+      <toBeDistributedPriceComponent>
+        <type>discount</type>
+        <code>
+          <coding>
+            <system>http://fhir.de/CodeSystem/condition_type</system>
+            <version>2019Q2</version>
+            <code>ZR01</code>
+            <display>Discount</display>
+          </coding>
+        </code>
+        <amount>
+          <value>-0.88</value>
+          <currency>EUR</currency>
+        </amount>
+      </toBeDistributedPriceComponent>
+      <requestedQuantity/>
+      <requestedAmount/>
       <requestedRatio>1</requestedRatio>
-      <confirmedQuantity>
-        <value>1</value>
-        <unit>PCE</unit>
-      </confirmedQuantity>
-      <confirmedAmount>
-        <value>116.88</value>
-        <currency>EUR</currency>
-      </confirmedAmount>
+      <confirmedQuantity/>
+      <confirmedAmount/>
       <confirmedRatio>1</confirmedRatio>
     </resource>
   </entry>
   <entry>
     <resource>
       <resourceType>ChargeItemDistribution</resourceType>
-      <id>2</id>
+      <id>000002</id>
       <meta>
         <versionId>11c1e586-1865-4210-af72-8d1dc8e8fcd3</versionId>
         <lastUpdated>2020-07-03T07:23:42Z</lastUpdated>
@@ -130,7 +125,7 @@
         <system>https://fhir-core-svc-prod.cfapps.eu10.hana.ondemand.com/pacc-acceptance-fs</system>
         <value>4fd31d12-280a-41a5-acf0-7f7bc79bbf0e</value>
       </identifier>
-      <status>confirmed</status>
+      <status>distributed</status>
       <subject>
         <reference>Patient/d4cf5699-6ab6-4fbf-8d4d-cea23358e58c</reference>
       </subject>
@@ -146,22 +141,26 @@
         </coverage>
         <priority>1</priority>
       </coverage>
+      <toBeDistributedQuantity>
+        <value>0.6</value>
+        <unit>EACH</unit>
+      </toBeDistributedQuantity>
       <toBeDistributedNetAmount>
-        <value>15</value>
+        <value>20</value>
         <currency>EUR</currency>
       </toBeDistributedNetAmount>
       <toBeDistributedGrossAmount>
-        <value>15</value>
+        <value>20</value>
         <currency>EUR</currency>
       </toBeDistributedGrossAmount>
       <toBeDistributedPriceComponent>
         <type>base</type>
         <code>
           <coding>
-            <system>http://fhir.de/CodeSystem/kbv/ebm</system>
+            <system>http://fhir.de/CodeSystem/condition_type</system>
             <version>2019Q2</version>
-            <code>40160</code>
-            <display>Kostenpauschale für interventionelle endoskopische Untersuchungen</display>
+            <code>PR00</code>
+            <display>Basic price</display>
           </coding>
         </code>
         <amount>
@@ -169,10 +168,22 @@
           <currency>EUR</currency>
         </amount>
       </toBeDistributedPriceComponent>
-      <confirmedQuantity>
-        <value>1</value>
-        <unit>PCE</unit>
-      </confirmedQuantity>
+      <toBeDistributedPriceComponent>
+        <type>surcharge</type>
+        <code>
+          <coding>
+            <system>http://fhir.de/CodeSystem/condition_type</system>
+            <version>2019Q2</version>
+            <code>ZR02</code>
+            <display>Surcharge</display>
+          </coding>
+        </code>
+        <amount>
+          <value>5</value>
+          <currency>EUR</currency>
+        </amount>
+      </toBeDistributedPriceComponent>
+      <confirmedQuantity/>
     </resource>
   </entry>
 </root>
