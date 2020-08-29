@@ -19,21 +19,25 @@ Message processData(Message message) {
     def ResultList = new XmlSlurper().parse(reader)
     def writer = new StringWriter()
     def builder = new MarkupBuilder(writer)
-
-    // Define target payload mapping
-    //builder.'ns1:ZNFHIR_CO_HIERARCHYORDER_POST'( 'xmlns:ns1':"urn:sap-com:document:sap:rfc:functions" ) {  
-    builder.resource {
-        
-        'resourceType'('Parameters')
-        
-        def validItems = ResultList.ET_RETURN.item.findAll{ item -> item.TYPE.text() == 'S' }
-        validItems.each{ item ->            
+    
+    // Check if there is error
+    def validItems = ResultList.ET_RETURN.item.findAll{ item -> item.TYPE.text() == 'E' }
+    if (validItems.size() > 0) {
+        def etErrMsg = "ET_RETURN.MESSAGE: ";
+        for (int i = 0; i < ResultList.ET_RETURN[0].item.size(); i++) {
+            etErrMsg = etErrMsg + ResultList.ET_RETURN[0].item[i].MESSAGE[0].text() + "; "
+        }
+        throw new Exception(etErrMsg);
+    } else {
+        // success
+        builder.resource {
+            'resourceType'('Parameters');
             'parameter' {
                 'name'('isSuccess')
                 'valueBoolean'('true')
-            } 
-        } 
-    }   
+            }
+        }
+    }
     
     // Generate output
     message.setBody(writer.toString())

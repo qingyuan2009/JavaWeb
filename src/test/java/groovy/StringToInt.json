@@ -1,0 +1,167 @@
+{
+    "resourceType": "Bundle",
+    "type": "message",
+    "entry": [
+        {
+            "resource": {
+                "resourceType": "Parameters",
+                "parameter": [
+                    {
+                        "name": "salesOrg",
+                        "valueString": "0001"
+                    },
+                    {
+                        "name": "distributionChannel",
+                        "valueString": "01"
+                    },
+                    {
+                        "name": "division",
+                        "valueString": "01"
+                    },
+                    {
+                        "name": "soldToParty",
+                        "valueString": "36"
+                    },
+                    {
+                        "name": "payer",
+                        "valueString": "36"
+                    },
+                    {
+                        "name": "pricingDate",
+                        "valueString": "20200731"
+                    }
+                ]
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "ChargeItemDistribution",
+                "id": "000001",
+                "meta": {
+                    "versionId": "00e33b68-5207-4bee-96e8-f842f48ff46c",
+                    "lastUpdated": "2020-07-03T07:23:41Z",
+                    "profile": "http://sap.com/healthcare/fhir/StructureDefinition/ChargeItemDistribution"
+                },
+                "identifier": {
+                    "use": "official",
+                    "system": "https://fhir-core-svc-prod.cfapps.eu10.hana.ondemand.com/pacc-acceptance-fs",
+                    "value": "301ce28e-4c3e-4c37-980a-7d5d854db37a"
+                },
+                "status": "distributed",
+                "subject": {
+                    "reference": "Patient/d4cf5699-6ab6-4fbf-8d4d-cea23358e58c"
+                },
+                "chargeItem": {
+                    "reference": "ChargeItem/24208464-6fff-4ebd-a6c5-88588a8f545f"
+                },
+                "context": {
+                    "reference": "Account/a4f64ee5-8b7e-4410-802b-7e1e55706643"
+                },
+                "toBeDistributedQuantity": {
+                    "value": "0.6",
+                    "unit": "EACH"
+                },
+                "toBeDistributedNetAmount": {
+                    "value": "116",
+                    "currency": "EUR"
+                },
+                "requestedRatio": "1",
+                "confirmedRatio": "1",
+                "toBeDistributedPriceComponent": [
+                    {
+                        "type": "base",
+                        "code": {
+                            "coding": {
+                                "system": "http://fhir.de/CodeSystem/condition_type",
+                                "version": "2019Q2",
+                                "code": "ZPR0"
+                            }
+                        },
+                        "amount": {
+                            "value": "116.00",
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "type": "base",
+                        "code": {
+                            "coding": {
+                                "system": "http://fhir.de/CodeSystem/condition_type",
+                                "version": "2019Q2",
+                                "code": "ZDIS"
+                            }
+                        },
+                        "amount": {
+                            "value": "-2.00",
+                            "currency": "EUR"
+                        }
+                    }
+                ]
+            }
+        },
+        {
+            "resource": {
+                "resourceType": "ChargeItemDistribution",
+                "id": "000002",
+                "meta": {
+                    "versionId": "11c1e586-1865-4210-af72-8d1dc8e8fcd3",
+                    "lastUpdated": "2020-07-03T07:23:42Z",
+                    "profile": "http://sap.com/healthcare/fhir/StructureDefinition/ChargeItemDistribution"
+                },
+                "identifier": {
+                    "use": "official",
+                    "system": "https://fhir-core-svc-prod.cfapps.eu10.hana.ondemand.com/pacc-acceptance-fs",
+                    "value": "4fd31d12-280a-41a5-acf0-7f7bc79bbf0e"
+                },
+                "status": "distributed",
+                "subject": {
+                    "reference": "Patient/d4cf5699-6ab6-4fbf-8d4d-cea23358e58c"
+                },
+                "chargeItem": {
+                    "reference": "ChargeItem/8cfb84d7-9793-41c0-9f57-b4661b0328ad"
+                },
+                "context": {
+                    "reference": "Account/a4f64ee5-8b7e-4410-802b-7e1e55706643"
+                },
+                "toBeDistributedQuantity": {
+                    "value": "0.4",
+                    "unit": "EACH"
+                },
+                "toBeDistributedNetAmount": {
+                    "value": "88",
+                    "currency": "EUR"
+                },
+                "toBeDistributedPriceComponent": [
+                    {
+                        "type": "base",
+                        "code": {
+                            "coding": {
+                                "system": "http://fhir.de/CodeSystem/condition_type",
+                                "version": "2019Q2",
+                                "code": "ZPR0"
+                            }
+                        },
+                        "amount": {
+                            "value": "88.00",
+                            "currency": "EUR"
+                        }
+                    },
+                    {
+                        "type": "base",
+                        "code": {
+                            "coding": {
+                                "system": "http://fhir.de/CodeSystem/condition_type",
+                                "version": "2019Q2",
+                                "code": "ZDIS"
+                            }
+                        },
+                        "amount": {
+                            "value": "-2.00",
+                            "currency": "EUR"
+                        }
+                    }
+                ]
+            }
+        }
+    ]
+}

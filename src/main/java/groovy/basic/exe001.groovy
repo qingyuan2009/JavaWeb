@@ -38,7 +38,7 @@ def map = [a:2, b: new Date()];
 map.put("aaaaa", "bbbbb");
 println(map);
 map.a = "a value";
-println(map.b);
+println(map);
 
 
 //For loop
